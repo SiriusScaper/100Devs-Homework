@@ -1,0 +1,17 @@
+h1 {
+  color: rgba(128, 0, 128, 1);
+}
+
+section > h2 {
+  color: rgba(0, 0, 255, 1);
+}
+
+article > h2 {
+  color: rgba(255, 0, 0, 1);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+section article h2 {
+  color: orange;
+}
