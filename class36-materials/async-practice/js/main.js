@@ -26,6 +26,19 @@
 // houseTwo()
 // houseThree()
 
+// function houseOne(){
+//     console.log('Paper delivered to house 1')
+// }
+// function houseTwo(){
+//     setTimeout(() => console.log('Paper delivered to house 2'), 0)
+// }
+// function houseThree(){
+//     setTimeout(() => console.log('Paper delivered to house 3'), 3000)
+// }
+// houseOne()
+// houseTwo()
+// houseThree()
+
 //Code 03
 // function houseOne(){
 //     console.log('Paper delivered to house 1')
@@ -134,7 +147,7 @@
 
 // getPaid()
 
-//Code 08
+//Code 08 Homework before Sunday
 // async function getACuteDogPhoto(){
 //     const res = await fetch('https://dog.ceo/api/breeds/image/random')
 //     const data = await res.json()
