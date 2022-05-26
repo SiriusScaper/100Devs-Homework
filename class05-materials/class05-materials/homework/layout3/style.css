@@ -22,6 +22,6 @@ section {
   height: 600px;
 }
 
-body>header+section+section {
+header+section+section {
   width: 40%;
 }
