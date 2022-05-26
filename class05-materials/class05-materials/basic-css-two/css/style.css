@@ -1,0 +1,29 @@
+li {
+  color: rgba(0, 0, 255, 1);
+  text-decoration: underline;
+  font-size: 15px;
+  background: rgba(106, 106, 111, 1);
+}
+
+section {
+  height: 300px;
+  background: rgba(105, 56, 105, 1);
+  border: 5px solid rgba(249, 219, 67, 1);
+}
+
+h1 {
+  font-size: 30px;
+  color: rgba(249, 219, 67, 1);
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer {
+  background: rgba(77, 29, 23, 1);
+  height: 300px;
+  width: 70%;
+}
+
+h2 {
+  text-decoration: line-through;
+}
