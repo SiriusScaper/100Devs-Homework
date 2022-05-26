@@ -6,7 +6,7 @@ body,
 header,
 footer,
 section {
-  border: 2px rgba(0, 0, 0, 1) solid;
+  border: 2px rgb(175, 175, 175) solid;
 }
 
 header,
