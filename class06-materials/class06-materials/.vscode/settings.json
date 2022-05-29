@@ -1,0 +1,10 @@
+{
+	"discord.enabled": true,
+	"css.styleSheets": [
+		"css/style.css",
+		"/style.css",
+		"style.css",
+		"${fileBasenameNoExtension}.css"
+	],
+	"css.format.spaceAroundSelectorSeparator": true
+}
