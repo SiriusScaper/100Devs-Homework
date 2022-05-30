@@ -15,14 +15,14 @@ const server = http.createServer((req, res) => {
     });
   }
 
-  const requestStudentApi = ()
-      res.writeHead(200, {'Content-Type': 'application/json'});
-      const objToJson = {
-        name: "leon",
-        status: "Boss Man",
-        currentOccupation: "Baller"
-      }
-      res.end(JSON.stringify(objToJson));
+  // const requestStudentApi = ()
+  //     res.writeHead(200, {'Content-Type': 'application/json'});
+  //     const objToJson = {
+  //       name: "leon",
+  //       status: "Boss Man",
+  //       currentOccupation: "Baller"
+  //     }
+  //     res.end(JSON.stringify(objToJson));
 
 
 
