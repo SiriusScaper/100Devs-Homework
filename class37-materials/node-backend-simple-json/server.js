@@ -49,6 +49,15 @@ const server = http.createServer((req, res) => {
         }
         res.end(JSON.stringify(objToJson));
       break;
+      case '/api2':
+        if(params['student']== 'leon'){
+          personName = 'leon'
+          personOccupation = 'Boss Man'
+          personStatus = 'Baller'
+        } 
+        res.writeHead(200, {'Content-Type': 'application/json'});
+          res.end(JSON.stringify(objToJson));
+        break;
     case '/css/style.css':
         fs.readFile('css/style.css', function(err, data) {
           res.write(data);
