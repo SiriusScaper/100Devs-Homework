@@ -12,14 +12,14 @@ async function makeReq(){
   document.querySelector("#personOccupation").textContent = data.currentOccupation
 }
 
-document.querySelector('#flipMe').addEventListener('click', makeReq)
+document.querySelector('#flipMe').addEventListener('click', makeReq2)
 
-async function makeReq(){
+async function makeReq2(){
 
-  const userName = document.querySelector("#userName").value;
-  const res = await fetch(`/api2?=`)
-  const data = await res.json()
+  const flip = document.querySelector("#flipMe").value;
+  const res = await fetch(`/api2?=${flip}`)
+  const data = await res.text()
 
   console.log(data);
-  document.querySelector("#flipResult").textContent = data.name
+  document.querySelector("#flipResult").textContent = data.flipResult
 }

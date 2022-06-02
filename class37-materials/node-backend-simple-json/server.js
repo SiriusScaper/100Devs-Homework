@@ -50,13 +50,10 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify(objToJson));
       break;
       case '/api2':
-        if(params['student']== 'leon'){
-          personName = 'leon'
-          personOccupation = 'Boss Man'
-          personStatus = 'Baller'
-        } 
-        res.writeHead(200, {'Content-Type': 'application/json'});
-          res.end(JSON.stringify(objToJson));
+        let flipResult = Math.ceil(Math.random()*2) <= 1 ? "Heads" : "Tails"
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.write(flipResult)
+          res.end();
         break;
     case '/css/style.css':
         fs.readFile('css/style.css', function(err, data) {
