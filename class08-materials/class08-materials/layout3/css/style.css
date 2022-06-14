@@ -30,11 +30,42 @@ body {
 /* LAYOUT
 /*******************************************/
 header {
-
+  height: 50px;
+  background: black;
+  color: white;
 }
 
-footer {
+nav * {
+  float: left;
+  width: 10%;
+  color: white;
+  display: block;
+}
 
+nav ul {
+  width: 50%;
+}
+
+nav form input {
+  width: 100%;
+}
+
+main + section > section{
+  width: 33.3333%;
+  float: left;
+}
+
+main > section {
+  width: 50%;
+  height: 500px;
+  float: left;
+}
+
+main section + section section {
+  width: 50%;
+  height: 250px;
+  float: left;
+  border: 2px solid black;
 }
 
 /******************************************
