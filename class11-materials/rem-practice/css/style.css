@@ -57,23 +57,23 @@
 /* Please set a base font-size on heyo, and make someText 12px, moreText 16px, and lastText 27px BUT use ems instead of px */
 
 .heyo {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .someText {
-  font-size: 0.75em;
+  font-size: 1.2em;
 }
 
 .moreText {
-  font-size: 1em;
+  font-size: 1.6em;
 }
 
 .lastText {
-  font-size: 1.688em;
+  font-size: 2.7em;
 }
 /* Please double the size of someText, moreText, and lastText using ems, but only make one change */
 .heyo {
-  font-size: 32px;
+  font-size: 20px;
 }
 
 /* Please wrap lastText in a new section with the class of utOh and give it a base font size of 40px */
@@ -82,6 +82,10 @@
 }
 
 /* Please fix your doubling of lastText, buy converting to rems */
+html {
+  font-size: 62.5%;
+}
+
 .lastText {
-  font-size: 2rem;
+  font-size: 2.7rem;
 }
