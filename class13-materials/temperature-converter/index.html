@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
+		<meta charset="utf-8" />
+		<meta name="description" content="This is where your description goes" />
+		<meta name="keywords" content="one, two, three" />
 
 		<title>Title in the tab</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		
-
+		<h1>Enter Temperature to Convert:</h1>
+		<form>
+			<label for="tempCToF">Convert from Celsius to Fahrenheit</label>
+			<input
+				id="tempCToF"
+				type="text"
+				placeholder="Enter Temperature in celsius"
+			/>
+		</form>
+		<button id="convertC" type="button" name="button">Convert</button>
+		<h2 id="outputF"></h2>
+		<form>
+			<label for="tempFToC">Convert from Fahrenheit to Celsius</label>
+			<input
+				id="tempFToC"
+				type="text"
+				placeholder="Enter Temperature in fahrenheit"
+			/>
+		</form>
+		<button id="convertF" type="button" name="button">Convert</button>
+		<h2 id="outputC"></h2>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
