@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
-    	<meta name="keywords" content="one, two, three">
+		<meta charset="utf-8" />
+		<meta name="description" content="This is where your description goes" />
+		<meta name="keywords" content="one, two, three" />
 
 		<title>Title in the tab</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		
+		<form>
+			<label for="celsius">Celsius to Fahrenheit</label>
+			<input id="celsiusToF" type="text" placeholder="celsius" />
+		</form>
+
+		<button id="convertC" type="button" name="button">Convert</button>
+
+		<h2 id="outputF"></h2>
+		<form>
+			<label for="fahrenheit">Fahrenheit to Celsius</label>
+			<input id="fahrenheitToC" type="text" placeholder="fahrenheit" />
+		</form>
+
+		<button id="convertF" type="button" name="button">Convert</button>
+
+		<h2 id="outputC"></h2>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
