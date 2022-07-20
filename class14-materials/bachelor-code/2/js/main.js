@@ -6,6 +6,9 @@ document.querySelector('#andiNext').addEventListener('click', andiNext)
 document.querySelector('#claireNext').addEventListener('click', claireNext)
 document.querySelector('#sharleenNext').addEventListener('click', sharleenNext)
 
+
+// function hidden(){}
+
 function andiNext(){
 	claire.classList.add('hidden')
 	sharleen.classList.add('hidden')
