@@ -50,7 +50,7 @@ app.get('/',async (request, response)=>{
 })
 
 
-
+// asynchronous function to create a new item and add it to the todos collection
 app.post('/addTodo', (request, response) => {
     db.collection('todos').insertOne({thing: request.body.todoItem, completed: false})
     .then(result => {
