@@ -1,13 +1,21 @@
-const express = require('express') // import node module for express
-const app = express() // set a variable to access express functions
-const MongoClient = require('mongodb').MongoClient // importing node module for mongodb using the mongoclient
-const PORT = 2121 // assigning a port number to a variable
-require('dotenv').config() // importing an environment file for sensitive config information to access the database
+// import node module for express
+const express = require('express') 
+// set a variable to access express functions
+const app = express() 
+// importing node module for mongodb using the mongoclient
+const MongoClient = require('mongodb').MongoClient 
+// assigning a port number to a variable
+const PORT = 2121 
+// importing an environment file for sensitive config information to access the database
+require('dotenv').config() 
 
 
-let db, // assigning db as a variable to call mongodb functionality
-    dbConnectionStr = process.env.DB_STRING, // assign a variable with the value of the connection key for mongodb that is stored in the env file
-    dbName = 'todo' // assign a variable to access the specific database for the app
+// assigning db as a variable to call mongodb functionality
+let db, 
+// assign a variable with the value of the connection key for mongodb that is stored in the env file
+    dbConnectionStr = process.env.DB_STRING, 
+    // assign a variable to access the specific database for the app
+    dbName = 'todo' 
 
 // connect and give the key and default value as parameters
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) 
@@ -60,6 +68,7 @@ app.post('/addTodo', (request, response) => {
     .catch(error => console.error(error))
 })
 
+// asynchronous function to update an item as complete in the todos collection in the db
 app.put('/markComplete', (request, response) => {
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
         $set: {
@@ -77,6 +86,7 @@ app.put('/markComplete', (request, response) => {
 
 })
 
+// asynchronous function to update an item as uncompleted in the todos collection in the db
 app.put('/markUnComplete', (request, response) => {
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
         $set: {
@@ -94,6 +104,7 @@ app.put('/markUnComplete', (request, response) => {
 
 })
 
+// asynchronous function to delete an item in the todos collection in the db
 app.delete('/deleteItem', (request, response) => {
     db.collection('todos').deleteOne({thing: request.body.itemFromJS})
     .then(result => {
