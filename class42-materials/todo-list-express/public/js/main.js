@@ -15,27 +15,27 @@ Array.from(itemCompleted).forEach((element)=>{ // Creates a copy of the objects 
 }) // closes the loop
 
 async function deleteItem(){ // Declares an asynchronous function called deleteItem
-    const itemText = this.parentNode.childNodes[1].innerText // Creates and assigns a variable of itemText to the "this" context to select the text of a childNode element based on the relation to the parentNode in the html
-    try{
-        const response = await fetch('deleteItem', {
-            method: 'delete',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              'itemFromJS': itemText
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
+    const itemText = this.parentNode.childNodes[1].innerText // Creates and assigns a variable of itemText to the "this" context to select the text of the list span
+    try{ // Declares a try block
+        const response = await fetch('deleteItem', {// Creates and assigns a variable of response to an await promise that fetches data from the result of the deleteItem route
+            method: 'delete', // Sends a delete request to the server
+            headers: {'Content-Type': 'application/json'}, // sets the type of content expected as JSON
+            body: JSON.stringify({ // sets the body/content of the message and stringify the json
+              'itemFromJS': itemText // property of the body content is set to a variable itemFromJS which has a value of itemText which is the inner text of the list item
+            }) // closes the fetch
+          })//closes the try
+        const data = await response.json() // Creates and assigns a variable of data to an await response promise with a json body to be converted
+        console.log(data) // console logging the value of data
+        location.reload() // reloads the current page to update what is displayed
 
-    }catch(err){
-        console.log(err)
-    }
-}
+    }catch(err){ // a catch for errors as part of the try block if an error occurs
+        console.log(err) // console logging the error
+    } // closes the catch
+} // closes the async function
 
-async function markComplete(){
-    const itemText = this.parentNode.childNodes[1].innerText
-    try{
+async function markComplete(){ // Declares an asynchronous function called markComplete
+    const itemText = this.parentNode.childNodes[1].innerText // Creates and assigns a variable of itemText to the "this" context to select the text of the list span
+    try{ // Declares a try block
         const response = await fetch('markComplete', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
