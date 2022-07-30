@@ -16,10 +16,10 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) // Connecting
     }) // closing the then 
 
 // Middleware
-app.set('view engine', 'ejs') // use the express template language ejs as the view engine
+app.set('view engine', 'ejs') // use the express template language ejs as the default render method
 app.use(express.static('public')) // set the default static file directory as public
-app.use(express.urlencoded({ extended: true })) // use urlencoding to simplify route paths using bodyparser
-app.use(express.json()) // enable parsing of json using bodyparser
+app.use(express.urlencoded({ extended: true })) // Lets express decode and encode URLs where the content is the same as the header. Supports arrays and objects
+app.use(express.json()) // enable parsing of JSON content from requests
 
 
 app.get('/',async (request, response)=>{ //call an asynchronous read function with req/res params at the root path
