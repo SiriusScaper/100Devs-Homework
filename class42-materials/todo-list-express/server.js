@@ -1,20 +1,21 @@
 const express = require('express') // Setting a constant to import express nodemodule and use it
 const app = express() // Setting a constant variable to the instance of express
 const MongoClient = require('mongodb').MongoClient // Setting a constant variable to access methods from MongoClient and interact with the database
-const PORT = 2121 // assigning a port number to a variable of PORT
+const PORT = 2121 // assigning a port number to a variable of PORT so the server knowns which port to listen to
 require('dotenv').config() // importing an environment file for sensitive config information to access the database
 
 
-let db, // assigning db as a variable to call mongodb functionality
+let db, // Declaring a variable of db to assign later
     dbConnectionStr = process.env.DB_STRING, // assign a variable with the value of the connection key for mongodb that is stored in the env file
-    dbName = 'todo' // assign a variable to access the specific database for the app
+    dbName = 'todo' // Creates and assigns a variable to access the specific database for the app
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) // connect and give the key and default value as parameters
-    .then(client => { //after the connection is made do this
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }) // Connecting to the database and gives the key variable and an additional property for compatibility  
+    .then(client => { // waits for a successful connection as part of the promise chain and then passes in the client information
         console.log(`Connected to ${dbName} Database`) // console log that the connection was successful
-        db = client.db(dbName) // reassign db to the parameter with a parameter of dbname to access the database "todo"
-    })
-    
+        db = client.db(dbName) // reassign db to a method with a parameter of dbname to access "todo"
+    }) // closing the then 
+
+// Middleware
 app.set('view engine', 'ejs') // use the express template language ejs as the view engine
 app.use(express.static('public')) // set the default static file directory as public
 app.use(express.urlencoded({ extended: true })) // use urlencoding to simplify route paths using bodyparser
