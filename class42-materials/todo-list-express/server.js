@@ -1,7 +1,7 @@
-const express = require('express') // import node module for express
-const app = express() // set a variable to access express functions
-const MongoClient = require('mongodb').MongoClient // importing node module for mongodb using the mongoclient
-const PORT = 2121 // assigning a port number to a variable
+const express = require('express') // Setting a constant to import express nodemodule and use it
+const app = express() // Setting a constant variable to the instance of express
+const MongoClient = require('mongodb').MongoClient // Setting a constant variable to access methods from MongoClient and interact with the database
+const PORT = 2121 // assigning a port number to a variable of PORT
 require('dotenv').config() // importing an environment file for sensitive config information to access the database
 
 
