@@ -68,7 +68,7 @@ app.put('/markUnComplete', (request, response) => { // Calls an asynchronous fun
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{ // Looks in the database to match the name of the item passed in from itemFromJS which is the value of itemText
         $set: {
             completed: false // Sets a completed value of false to the item
-          }
+        }
     },{
         sort: {_id: -1}, // Sorts the list after update by descending order
         upsert: false // Prevents the insert if the item does not already exist
