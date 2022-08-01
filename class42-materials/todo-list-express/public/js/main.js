@@ -4,15 +4,15 @@ const itemCompleted = document.querySelectorAll('.item span.completed') // Creat
 
 Array.from(deleteBtn).forEach((element)=>{ //Creates a copy of the objects stored in deleteBtn as an array and uses the array method forEach to loop through them 
     element.addEventListener('click', deleteItem) // As the forEach loops through the array it adds an event listener with a property of click to the current element and calls the function deleteItem
-}) //closes the loop
+}) //Ends the loop
 
 Array.from(item).forEach((element)=>{ // Creates a copy of the objects stored in item variable as an array and uses the array method forEach to loop through them
     element.addEventListener('click', markComplete) // As the forEach loops through the array it adds an event listener with a property of click to the current element and calls the function markComplete
-}) //closes the loop
+}) //Ends the loop
 
 Array.from(itemCompleted).forEach((element)=>{ // Creates a copy of the objects stored in the itemCompleted variable as an array and uses the array method forEach to loop through them
     element.addEventListener('click', markUnComplete) // As the forEach loops through the array it adds an event listener with a property of click to the current element and calls the function markUnComplete
-}) // closes the loop
+}) // Ends the loop
 
 async function deleteItem(){ // Declares an asynchronous function called deleteItem
     const itemText = this.parentNode.childNodes[1].innerText // Creates and assigns a variable of itemText to the "this" context to select the text of the list span
@@ -22,16 +22,16 @@ async function deleteItem(){ // Declares an asynchronous function called deleteI
             headers: {'Content-Type': 'application/json'}, // sets the type of content expected as JSON
             body: JSON.stringify({ // sets the body/content of the message and stringifies the JSOn
               'itemFromJS': itemText // property of the body content is set to a variable itemFromJS which has a value of itemText which is the inner text of the list item
-            }) // closes the fetch
-          })//closes the try
+            }) // Ends the fetch
+          })//Ends the try
         const data = await response.json() // Creates and assigns a variable of data to an await response promise with a json body to be converted
         console.log(data) // console logging the value of data
         location.reload() // reloads the current page to update what is displayed
 
     }catch(err){ // a catch for errors as part of the try block if an error occurs
         console.log(err) // console logging the error
-    } // closes the catch
-} // closes the async function
+    } // Ends the catch
+} // Ends the async function
 
 async function markComplete(){ // Declares an asynchronous function called markComplete
     const itemText = this.parentNode.childNodes[1].innerText // Creates and assigns a variable of itemText to the "this" context to select the text of the list span
@@ -41,15 +41,15 @@ async function markComplete(){ // Declares an asynchronous function called markC
             headers: {'Content-Type': 'application/json'}, // sets the type of content expected as JSON
             body: JSON.stringify({ // sets the body/content of the message and stringifies the JSON
                 'itemFromJS': itemText // property of the body content is set to a variable itemFromJS which has a value of itemText which is the inner text of the list item
-            }) // closes the fetch
-          }) // closes the try
+            }) // Ends the fetch
+          }) // Ends the try
         const data = await response.json() // Creates and assigns a variable of data to an await response promise with a json body to be converted
         console.log(data) // console logging the value of data
         location.reload() // reloads the current page to update what is displayed
 
     }catch(err){ // a catch for errors as part of the try block if an error occurs
         console.log(err) // console logging the error
-    } // closes the catch
+    } // Ends the catch
 } // closes the async function
 
 async function markUnComplete(){ // Declares an asynchronous function called markUnComplete
@@ -68,5 +68,5 @@ async function markUnComplete(){ // Declares an asynchronous function called mar
 
     }catch(err){ // a catch for errors as part of the try block if an error occurs
         console.log(err) // console logging the error
-    } // closes the catch
-} // closes the async function
+    } // Ends the catch
+} // Ends the async function
