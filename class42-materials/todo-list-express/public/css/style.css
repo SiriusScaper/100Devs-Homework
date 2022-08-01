@@ -5,3 +5,4 @@ h1{ /* Selects h1 tags in the ejs file */
     color: gray;/* Declares a value of gray for the property of text color to be applied to elements with the class of completed */
     text-decoration: line-through;/* Declares a value of line-through for the property of text-decoration to be applied to elements with the class of completed */
 }/* Closes the declaration block */
+
