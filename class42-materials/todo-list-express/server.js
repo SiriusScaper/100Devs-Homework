@@ -59,38 +59,36 @@ app.put('/markComplete', (request, response) => { // Calls an asynchronous funct
     })// Ends the update call
     .then(result => { // On successful insert do the following
         console.log('Marked Complete') // console log "Marked Complete"
-        response.json('Marked Complete') // Responds with json "Marked Complete" to update the number of todos items left
+        response.json('Marked Complete') // Responds with json "Marked Complete" to the sender
     }) // End of the .then promise chain
     .catch(error => console.error(error)) // If something doesn't work return an error
 }) // End of the async function
 
-app.put('/markUnComplete', (request, response) => { // Calls an asynchronous function to update an item as uncompleted in the todos collection in the db
-    db.collection('todos').updateOne({thing: request.body.itemFromJS},{
+app.put('/markUnComplete', (request, response) => { // Calls an asynchronous function that updates using the '/markUnComplete' route to mark an item as uncompleted in the todos collection in the db
+    db.collection('todos').updateOne({thing: request.body.itemFromJS},{ // Looks in the database to match the name of the item passed in from itemFromJS which is the value of itemText
         $set: {
-            completed: false
+            completed: false // Sets a completed value of false to the item
           }
     },{
-        sort: {_id: -1},
-        upsert: false
-    })
-    .then(result => {
-        console.log('Marked Complete')
-        response.json('Marked Complete')
-    })
-    .catch(error => console.error(error))
+        sort: {_id: -1}, // Sorts the list after update by descending order
+        upsert: false // Prevents the insert if the item does not already exist
+    }) // End of the .then promise chain
+    .then(result => { // On successful insert do the following
+        console.log('Marked Complete') // console log "Marked Complete"
+        response.json('Marked Complete') // Responds with json "Marked Complete" to the sender
+    }) // End of the .then promise chain
+    .catch(error => console.error(error)) // If something doesn't work return an error
+}) // End of the async function
 
-})
-
-app.delete('/deleteItem', (request, response) => { // asynchronous function to delete an item in the todos collection in the db
-    db.collection('todos').deleteOne({thing: request.body.itemFromJS})
-    .then(result => {
-        console.log('Todo Deleted')
-        response.json('Todo Deleted')
-    })
-    .catch(error => console.error(error))
-
-})
+app.delete('/deleteItem', (request, response) => { // Calls an asynchronous function that deletes an item in the todos collection in the db using the '/deleteItem' route
+    db.collection('todos').deleteOne({thing: request.body.itemFromJS}) // Looks in the database to match the name of the item passed in from itemFromJS which is the value of itemText
+    .then(result => { // On successful deletion do the following
+        console.log('Todo Deleted') // console log "Todo Deleted"
+        response.json('Todo Deleted') // Responds with json "Todo Deleted" to the sender
+    }) // End of the .then promise chain
+    .catch(error => console.error(error)) // If something doesn't work return an error
+}) // End of the async function
 
 app.listen(process.env.PORT || PORT, ()=>{ // start the express server and check for the Port in the env file or default to the variable set
-    console.log(`Server running on port ${PORT}`) // confirm the sever is running and on what port
-})
+    console.log(`Server running on port ${PORT}`) // confirm the sever is running and on what port by console logging it
+}) // End of the listen function
