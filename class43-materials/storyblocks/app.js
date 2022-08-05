@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
@@ -18,17 +18,15 @@ if (process.env.NODE_ENV === 'development'){
 }
 
 // Static Folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 // Routes
 app.use('/', require('./routes/index'));
 
 // Hnadlebars
-app.engine('.hbs', engine({extname: '.hbs', 
-defaultLayout: false, 
-layoutsDir:'views/layouts'}));
-app.set('view engine', '.hbs');
-app.set('views', './views');
+app.engine('.hbs', engine({extname: '.hbs'}))
+app.set('view engine', '.hbs')
+app.set('views', './views')
 
 const PORT = process.env.PORT || 3000
 
