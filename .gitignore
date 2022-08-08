@@ -134,3 +134,6 @@ dist
 
 # ignore sub-directory
 class37-materials/node-group/
+
+# ignore nodemon config
+nodemon.json
