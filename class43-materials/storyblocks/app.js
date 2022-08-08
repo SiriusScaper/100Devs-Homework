@@ -3,10 +3,22 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const {engine} = require('express-handlebars')
+const passport = require('passport')
+const session = require('express-session')
 const connectDB = require('./config/db')
 
 // Load config
 dotenv.config({path: './config/config.env'})
+
+// Session
+app.use(session({
+  secret: 'keyboard dog',
+  resave: false,
+  saveUninitialized: false
+}))
+
+// Passport Config
+require('./config/passport')(passport)
 
 connectDB()
 
@@ -20,13 +32,17 @@ if (process.env.NODE_ENV === 'development'){
 // Static Folder
 app.use(express.static('public'))
 
-// Routes
-app.use('/', require('./routes/index'));
-
 // Hnadlebars
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
 app.set('views', './views')
+
+//Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Routes
+app.use('/', require('./routes/index'));
 
 const PORT = process.env.PORT || 3000
 
