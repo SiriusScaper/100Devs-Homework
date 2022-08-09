@@ -1,5 +1,5 @@
 // const path = require('path')
-const path = require('path')
+// const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
@@ -78,7 +78,7 @@ app.use(function (req, res, next) {
 })
 
 // Static Folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'))
 
 // Routes
 app.use('/', require('./routes/index'));
