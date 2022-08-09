@@ -4,7 +4,7 @@ const { query } = require('express');
 const app = express();
 const MongoClient = require('mongodb').MongoClient
 
-const connectionString = 'mongodb+srv://sirius:@cluster0.kfgr4ii.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 
 
 app.use(express.static('public'))
 app.use(bodyParser.json())
