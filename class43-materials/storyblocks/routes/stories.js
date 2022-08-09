@@ -114,7 +114,7 @@ router.put('/:id', ensureAuth, async (req, res) => {
 // @route DELETE /stories/:id
 router.delete('/:id', ensureAuth, async (req, res) => {
   try {
-    await Story.remove({ _id: req.params.id })
+    await Story.deleteOne({ _id: req.params.id })
     res.redirect('/dashboard')
   } catch (err) {
     console.error(err)
