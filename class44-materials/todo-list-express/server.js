@@ -48,7 +48,7 @@ app.put('/markComplete', (request, response) => {
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
         $set: {
             completed: true
-          }
+        }
     },{
         sort: {_id: -1},
         upsert: false
@@ -65,7 +65,7 @@ app.put('/markUnComplete', (request, response) => {
     db.collection('todos').updateOne({thing: request.body.itemFromJS},{
         $set: {
             completed: false
-          }
+        }
     },{
         sort: {_id: -1},
         upsert: false

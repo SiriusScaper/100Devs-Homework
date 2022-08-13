@@ -21,9 +21,9 @@ async function deleteItem(){
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemFromJS': itemText
+            'itemFromJS': itemText
             })
-          })
+        })
         const data = await response.json()
         console.log(data)
         location.reload()
@@ -42,7 +42,7 @@ async function markComplete(){
             body: JSON.stringify({
                 'itemFromJS': itemText
             })
-          })
+        })
         const data = await response.json()
         console.log(data)
         location.reload()
@@ -61,7 +61,7 @@ async function markUnComplete(){
             body: JSON.stringify({
                 'itemFromJS': itemText
             })
-          })
+        })
         const data = await response.json()
         console.log(data)
         location.reload()
