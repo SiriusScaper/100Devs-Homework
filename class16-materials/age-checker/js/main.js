@@ -5,10 +5,10 @@
 //If under 25, tell them they can not rent cars affordably
 //If under 30, tell them they can not rent fancy cars affordably
 //If under over 30, tell them there is nothing left to look forward too
-let age = document.querySelector('#danceDanceRevolution').value
+// let age = document.querySelector('#danceDanceRevolution').value
 const ageChecker = (age) => {
-  Number(age)
   let message
+  let element = document.querySelector('p')
   if (age < 16) {
     message = "You can't drive"
   } else if (age >= 16 && age < 18){
@@ -22,7 +22,7 @@ const ageChecker = (age) => {
   } else {
     message = `Nothing left in life to look forward to`
   }
-  return message
+  element.innerHTML = message
 }
 
 //--- Harder
